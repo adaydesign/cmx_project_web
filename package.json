@@ -1,0 +1,17 @@
+{
+  "name": "cmx_project",
+  "private": true,
+  "sideEffects": false,
+  "type": "module",
+  "scripts": {
+    "sso:build": "cd cmx_sso_web && npm run build",
+    "sso:dev": "cd cmx_sso_web && npm run dev",
+    "sso:start": "cd cmx_sso_web && npm start",
+    "app:build": "cd cmx_app_web && npm run build",
+    "app:dev": "cd cmx_app_web && npm run dev",
+    "app:start": "cd cmx_app_web && npm start"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
