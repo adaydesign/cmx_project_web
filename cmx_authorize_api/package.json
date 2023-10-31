@@ -1,0 +1,12 @@
+{
+  "name": "cmx_sso_api",
+  "private": true,
+  "sideEffects": false,
+  "type": "module",
+  "scripts": {
+    "start": "json-server --watch db.json --port 3004"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

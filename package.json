@@ -9,7 +9,9 @@
     "sso:start": "cd cmx_sso_web && npm start",
     "app:build": "cd cmx_app_web && npm run build",
     "app:dev": "cd cmx_app_web && npm run dev",
-    "app:start": "cd cmx_app_web && npm start"
+    "app:start": "cd cmx_app_web && npm start",
+    "api:start": "cd cmx_authorize_api && npm start",
+    "tmp:dev": "cd cmx_template_web && npm run dev"
   },
   "engines": {
     "node": ">=18.0.0"
