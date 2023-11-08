@@ -64,17 +64,19 @@ const AuthorizedSideBar = () => {
         spacing="0"
         alignItems="stretch"
         mt={THEME_SIZE_HEADER_HEIGHT}
+        
       >
         <Sidebar
           variant="compact"
           bg={THEME_COLOR_SIDEBAR_BG}
           spacing={1}
           w={THEME_SIZE_LEFT_SIDEBAR_WIDTH}
+          borderRightWidth={0}
         >
           <AuthorizedMainSidebarSection />
           <AuthorizedFavoriteAppSidebarSection />
         </Sidebar>
-        <Sidebar>
+        <Sidebar borderRightWidth={0} shadow="sm" >
           <AuthorizedUserMenuSideBar />
         </Sidebar>
       </HStack>

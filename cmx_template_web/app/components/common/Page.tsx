@@ -1,4 +1,4 @@
-import { Flex, HStack, Heading, Text, VStack } from "@chakra-ui/react"
+import { Flex, Heading, Text } from "@chakra-ui/react"
 import { ReactNode } from "react"
 
 type PageProps = {

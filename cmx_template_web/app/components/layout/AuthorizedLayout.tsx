@@ -21,7 +21,6 @@ const AuthorizedLayout = ({ children }: AuthorizedLayoutProps) => {
       navbar={<AuthorizedHeader />}
     >
       <Flex
-        
         p={2}
         direction="column"
         minH="full"

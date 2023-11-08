@@ -2,6 +2,7 @@ import { withEmotionCache } from "@emotion/react"
 import { cssBundleHref } from "@remix-run/css-bundle"
 import type { LinksFunction } from "@remix-run/node"
 import {
+  Link,
   Links,
   LiveReload,
   Meta,
@@ -22,6 +23,7 @@ import { AuthorizedLayout } from "./components/layout"
 import { AuthContext } from "./contexts/AuthContext"
 import { APP_FULL_NAME } from "./constants/app.config"
 import { useUsers } from "./api-hooks/useUsers"
+import { BreadcrumbLink } from "@chakra-ui/react"
 
 export const meta: MetaFunction = () => {
   return [{ title: APP_FULL_NAME}];
@@ -85,6 +87,14 @@ const Document = withEmotionCache(
     )
   }
 )
+
+export const handle = {
+  breadcrumb: () => (
+    <BreadcrumbLink as={Link} to="/">
+      หน้าหลัก
+    </BreadcrumbLink>
+  ),
+}
 
 export const loader = async () => {
   const data = await useUsers()

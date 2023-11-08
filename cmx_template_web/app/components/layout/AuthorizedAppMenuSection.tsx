@@ -1,5 +1,5 @@
 import { Icon } from '@chakra-ui/react'
-import { Link } from '@remix-run/react'
+import { Link, useLocation, useMatch } from '@remix-run/react'
 import { SidebarSection, NavGroup, NavItem } from '@saas-ui/react'
 import { useMemo } from 'react'
 import { useFormContext } from 'react-hook-form'
@@ -7,6 +7,8 @@ import { menuItems } from '~/constants/menu.config'
 
 const AuthorizedAppMenuSection = () => {
   const { watch } = useFormContext()
+  const {pathname} = useLocation()
+  console.log(location)
 
   const displayedItems = useMemo(()=>{
     const search = watch("search")
@@ -37,6 +39,7 @@ const AuthorizedAppMenuSection = () => {
               key={item.id}
               as={Link}
               to={item.to}
+              isActive={pathname==item.to}
             >
               {item.label}
             </NavItem>

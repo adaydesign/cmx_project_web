@@ -11,6 +11,7 @@
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^2.1.1",
     "@chakra-ui/react": "^2.8.1",
     "@emotion/react": "^11.11.1",
     "@emotion/server": "^11.11.0",
@@ -23,17 +24,25 @@
     "@remix-run/serve": "^2.1.0",
     "@saas-ui/react": "^2.3.0",
     "@saas-ui/theme-glass": "^0.5.1",
+    "@tanstack/match-sorter-utils": "^8.8.4",
+    "@tanstack/react-table": "^8.10.7",
+    "export-to-csv": "^1.2.1",
     "framer-motion": "^6.5.1",
     "isbot": "^3.6.8",
+    "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.7.1",
+    "papaparse": "^5.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.47.0",
-    "react-icons": "^4.11.0"
+    "react-icons": "^4.11.0",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.0/xlsx-0.20.0.tgz"
   },
   "devDependencies": {
     "@flydotio/dockerfile": "^0.4.10",
     "@remix-run/dev": "^2.1.0",
     "@remix-run/eslint-config": "^2.1.0",
+    "@types/papaparse": "^5.3.10",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
     "eslint": "^8.38.0",
