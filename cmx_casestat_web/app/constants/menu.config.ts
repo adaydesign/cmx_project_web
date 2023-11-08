@@ -1,4 +1,4 @@
-import { GoServer,GoGraph,GoDatabase, GoHome, GoPerson, GoStack, GoSearch } from "react-icons/go/index.js";
+import { GoServer,GoGraph,GoDatabase, GoHome, GoPerson, GoStack, GoSearch, GoRead, GoBook } from "react-icons/go/index.js";
 import { APP_NAME } from "./app.config";
 
 const mainMenuItems: AppMenuType[] = [
@@ -38,34 +38,9 @@ const menuItems: AppMenuType[] = [
                 label: "หน้าหลัก",
                 icon: GoHome,
                 to:"/"
-            }
+            },
         ]
     },
-    {
-        id:2,
-        title: "รายงาน/สถิติ",
-        isCollapsible: true,
-        navItems: [
-            {
-                id:1,
-                label: "สถิติการไกล่เกลี่ย",
-                icon: GoGraph,
-                to:"/page1"
-            },
-            {
-                id:2,
-                label: "สถิติการรับฟ้อง",
-                icon: GoServer,
-                to:"/page2"
-            },
-            {
-                id:3,
-                label: "สถิติคดี",
-                icon: GoDatabase,
-                to:"/page3"
-            },
-        ]
-    }
 ]
 
 

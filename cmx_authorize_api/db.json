@@ -53,6 +53,15 @@
                     "app_name": "demoX",
                     "app_shortname": "demoX",
                     "app_link": "/"
+                },
+                {
+                    "app_id": 6,
+                    "group": 3,
+                    "favorite": true,
+                    "app_icon": "https://cdn-icons-png.flaticon.com/512/2328/2328966.png",
+                    "app_name": "casestatX",
+                    "app_shortname": "statX",
+                    "app_link": "/"
                 }
             ]
         }

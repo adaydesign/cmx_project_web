@@ -1,4 +1,4 @@
-import { GoServer,GoGraph,GoDatabase, GoHome, GoPerson, GoStack, GoSearch } from "react-icons/go/index.js";
+import { GoServer,GoGraph,GoDatabase, GoHome, GoPerson, GoStack, GoSearch, GoBook } from "react-icons/go/index.js";
 import { APP_NAME } from "./app.config";
 
 const mainMenuItems: AppMenuType[] = [
@@ -38,6 +38,12 @@ const menuItems: AppMenuType[] = [
                 label: "หน้าหลัก",
                 icon: GoHome,
                 to:"/"
+            },
+            {
+                id:2,
+                label: "readmdx",
+                icon: GoBook,
+                to:"/readme"
             }
         ]
     },

@@ -8,7 +8,6 @@ import { menuItems } from '~/constants/menu.config'
 const AuthorizedAppMenuSection = () => {
   const { watch } = useFormContext()
   const {pathname} = useLocation()
-  console.log(location)
 
   const displayedItems = useMemo(()=>{
     const search = watch("search")

@@ -3,7 +3,7 @@ export const THEME_SIZE_HEADER_HEIGHT = "56px"
 export const THEME_SIZE_LEFT_SIDEBAR_WIDTH = "64px"
 
 // main theme color
-export const THEME_COLOR_MAIN = "green"
+export const THEME_COLOR_MAIN = "yellow"
 export const THEME_COLOR_SECONDARY = ""
 
 function color(type:string, volume?:number){

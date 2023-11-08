@@ -1,0 +1,8 @@
+.report-style-class {
+    height: calc(100vh - 50px);
+    width: 100%;
+}
+
+iframe {
+    border: none;
+}
