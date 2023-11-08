@@ -4,12 +4,16 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
+    "sso:install": "cd cmx_sso_web && npm install",
     "sso:build": "cd cmx_sso_web && npm run build",
     "sso:dev": "cd cmx_sso_web && npm run dev",
     "sso:start": "cd cmx_sso_web && npm start",
-    "app:build": "cd cmx_app_web && npm run build",
-    "app:dev": "cd cmx_app_web && npm run dev",
-    "app:start": "cd cmx_app_web && npm start",
+
+    "casestat:install": "cd cmx_casestat_web && npm install",
+    "casestat:build": "cd cmx_casestat_web && npm run build",
+    "casestat:dev": "cd cmx_casestat_web && npm run dev",
+    "casestat:start": "cd cmx_casestat_web && npm start",
+
     "api:start": "cd cmx_authorize_api && npm start",
     "tmp:dev": "cd cmx_template_web && npm run dev"
   },
