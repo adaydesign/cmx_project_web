@@ -1,38 +1,28 @@
-import { Flex, Show } from "@chakra-ui/react"
 import { AppShell } from "@saas-ui/react"
-import { ReactNode } from "react"
+import { ReactNode, useState } from "react"
 
-import { AuthorizedHeader, AuthorizedSideBar } from "~/components/layout"
-import Breadcrum from "./Breadcrum"
+import { AuthorizedBody, AuthorizedHeader, AuthorizedSideBar } from "~/components/layout"
 import {
-  THEME_SIZE_HEADER_HEIGHT,
-  THEME_SIZE_LEFT_SIDEBAR_WIDTH,
-} from "~/constants/theme.config"
+  defaultLayoutContextValue,
+  LayoutContext,
+} from "~/contexts/LayoutContext"
 
-interface AuthorizedLayoutProps {
+type AuthorizedLayoutProps = {
   children: ReactNode
 }
 
 const AuthorizedLayout = ({ children }: AuthorizedLayoutProps) => {
+  const [layout, setLayout] = useState<LayoutMode>(defaultLayoutContextValue)
   return (
-    <AppShell
-      minH="100vh"
-      sidebar={<AuthorizedSideBar />}
-      navbar={<AuthorizedHeader />}
-    >
-      <Flex
-        p={2}
-        direction="column"
-        minH="full"
-        as="main"
-        mt={THEME_SIZE_HEADER_HEIGHT}
-        ml={{ lg: `calc(280px + ${THEME_SIZE_LEFT_SIDEBAR_WIDTH})` }}
-        w={{ sm: 'full', lg: `calc(100% - 280px - ${THEME_SIZE_LEFT_SIDEBAR_WIDTH})` }}
+    <LayoutContext.Provider value={[layout, setLayout]}>
+      <AppShell
+        minH="100vh"
+        sidebar={<AuthorizedSideBar />}
+        navbar={<AuthorizedHeader />}
       >
-        <Breadcrum />
-        {children}
-      </Flex>
-    </AppShell>
+        <AuthorizedBody>{children}</AuthorizedBody>
+      </AppShell>
+    </LayoutContext.Provider>
   )
 }
 

@@ -1,14 +1,19 @@
 import { Icon } from '@chakra-ui/react'
-import { Link, useLocation, useMatch } from '@remix-run/react'
+import { Link, useLocation } from '@remix-run/react'
 import { SidebarSection, NavGroup, NavItem } from '@saas-ui/react'
 import { useMemo } from 'react'
 import { useFormContext } from 'react-hook-form'
 import { menuItems } from '~/constants/menu.config'
+import { useLayoutContext, isCompactLayout } from '~/contexts/LayoutContext'
 
 const AuthorizedAppMenuSection = () => {
   const { watch } = useFormContext()
   const {pathname} = useLocation()
-
+  const [layout] = useLayoutContext()
+  const isCompact = useMemo(() => {
+    return isCompactLayout(layout)
+  }, [layout])
+  
   const displayedItems = useMemo(()=>{
     const search = watch("search")
     if(search && search.trim() != ""){
@@ -28,8 +33,8 @@ const AuthorizedAppMenuSection = () => {
     { displayedItems &&
       displayedItems.map((m) => (
         <NavGroup
-          title={m.title}
-          isCollapsible={m.isCollapsible}
+          title={isCompact? null : m.title}
+          isCollapsible={isCompact? false: m.isCollapsible}
           key={m.id}
         >
           {m.navItems?.map((item) => (

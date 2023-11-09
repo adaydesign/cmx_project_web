@@ -1,6 +1,20 @@
-import { HStack, Center, Heading, Image, Text, Show } from "@chakra-ui/react"
-import { Sidebar, SidebarSection, NavItem, SearchInput, SidebarToggleButton } from "@saas-ui/react"
-import { GoInfo } from "react-icons/go/index.js"
+import {
+  HStack,
+  Center,
+  Heading,
+  Image,
+  Text,
+  Show,
+  Collapse,
+} from "@chakra-ui/react"
+import {
+  Sidebar,
+  SidebarSection,
+  NavItem,
+  SearchInput,
+  SidebarToggleButton,
+} from "@saas-ui/react"
+import { GoInfo, GoShieldCheck } from "react-icons/go/index.js"
 import {
   APP_ICON,
   APP_NAME,
@@ -19,39 +33,59 @@ import {
   AuthorizedAppMenuSection,
 } from "."
 import { Controller, FormProvider, useForm } from "react-hook-form"
+import { isCompactLayout, useLayoutContext } from "~/contexts/LayoutContext"
+import { useMemo } from "react"
 
 const AuthorizedUserMenuSideBar = () => {
   const methods = useForm()
   const { control, setValue } = methods
+  const [layout] = useLayoutContext()
+  const isCompact = useMemo(() => {
+    return isCompactLayout(layout)
+  }, [layout])
 
   return (
-    <FormProvider {...methods}>
-      <SidebarSection mb={0}>
-        <AuthorizedUserMenu />
-      </SidebarSection>
-      <SidebarSection>
-        <Controller
-          control={control}
-          name="search"
-          render={({ field }) => (
-            <SearchInput
-              placeholder="ค้นหาเมนู"
-              onReset={() => setValue("search", "")}
-              {...field}
+    <Sidebar
+      borderRightWidth={0}
+      shadow="md"
+      toggleBreakpoint={false}
+      variant={layout}
+      minWidth="auto"
+      transition="width"
+      transitionDuration="normal"
+    >
+      <FormProvider {...methods}>
+        <SidebarSection mb={0}>
+          <AuthorizedUserMenu />
+        </SidebarSection>
+        <Collapse in={!isCompact}>
+          <SidebarSection>
+            <Controller
+              control={control}
+              name="search"
+              render={({ field }) => (
+                <SearchInput
+                  placeholder="ค้นหาเมนู"
+                  onReset={() => setValue("search", "")}
+                  {...field}
+                />
+              )}
             />
-          )}
-        />
-      </SidebarSection>
-      <AuthorizedAppMenuSection />
-      <SidebarSection>
-        <NavItem icon={<GoInfo />}>คู่มือการใช้งาน</NavItem>
-      </SidebarSection>
-      <SidebarSection>
-        <Text fontSize="sm">
-          {APP_FULL_NAME} เวอร์ชัน {APP_VERSION}
-        </Text>
-      </SidebarSection>
-    </FormProvider>
+          </SidebarSection>
+        </Collapse>
+        <AuthorizedAppMenuSection />
+        <SidebarSection>
+          <NavItem icon={<GoInfo />}>คู่มือการใช้งาน</NavItem>
+        </SidebarSection>
+        <Collapse in={!isCompact}>
+          <SidebarSection>
+            <Text fontSize="sm">
+              {APP_FULL_NAME} เวอร์ชัน {APP_VERSION}
+            </Text>
+          </SidebarSection>
+        </Collapse>
+      </FormProvider>
+    </Sidebar>
   )
 }
 
@@ -64,7 +98,6 @@ const AuthorizedSideBar = () => {
         spacing="0"
         alignItems="stretch"
         mt={THEME_SIZE_HEADER_HEIGHT}
-        
       >
         <Sidebar
           variant="compact"
@@ -76,9 +109,7 @@ const AuthorizedSideBar = () => {
           <AuthorizedMainSidebarSection />
           <AuthorizedFavoriteAppSidebarSection />
         </Sidebar>
-        <Sidebar borderRightWidth={0} shadow="sm" >
-          <AuthorizedUserMenuSideBar />
-        </Sidebar>
+        <AuthorizedUserMenuSideBar />
       </HStack>
     </Show>
   )
