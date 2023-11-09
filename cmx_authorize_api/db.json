@@ -10,6 +10,15 @@
             },
             "authorize": [
                 {
+                    "app_id": 0,
+                    "group": 1,
+                    "favorite": true,
+                    "app_icon": "https://cdn-icons-png.flaticon.com/512/9052/9052119.png",
+                    "app_name": "sso",
+                    "app_shortname": "sso",
+                    "app_link": "/"
+                },
+                {
                     "app_id": 1,
                     "group": 1,
                     "favorite": true,
@@ -21,7 +30,7 @@
                 {
                     "app_id": 2,
                     "group": 1,
-                    "favorite": false,
+                    "favorite": true,
                     "app_icon": "https://cdn-icons-png.flaticon.com/128/950/950264.png",
                     "app_name": "ระบบงานหมาย",
                     "app_shortname": "งานหมาย",
@@ -30,7 +39,7 @@
                 {
                     "app_id": 3,
                     "group": 1,
-                    "favorite": false,
+                    "favorite": true,
                     "app_icon": "https://cdn-icons-png.flaticon.com/128/10552/10552810.png",
                     "app_name": "ระบบงานหมายสี",
                     "app_shortname": "งานหมายสี",
@@ -618,6 +627,43 @@
                 "https://i.dummyjson.com/data/products/30/3.jpg",
                 "https://i.dummyjson.com/data/products/30/thumbnail.jpg"
             ]
+        }
+    ],
+    "notify":[
+        {
+            "id":1,
+            "user_id":10,
+            "app_id":1,
+            "message":"อ12/2566 เพิ่มวันนัดพิจารณาคดี วันที่ 19/12/66 9.30น.",
+            "url":"/"
+        },
+        {
+            "id":2,
+            "user_id":10,
+            "app_id":1,
+            "message":"อ8/2566 เพิ่มวันนัดสืบพยาน วันที่ 20/12/66 9.30น.",
+            "url":"/"
+        },
+        {
+            "id":3,
+            "user_id":10,
+            "app_id":1,
+            "message":"คดี อ10/2566 คดีแดง อ15/2566 อ่านคำพิพากษาแล้ว",
+            "url":"/"
+        },
+        {
+            "id":4,
+            "user_id":10,
+            "app_id":2,
+            "message":"คดี อ100/2566 ออกหมายจับ 2/2566",
+            "url":"/"
+        },
+        {
+            "id":5,
+            "user_id":10,
+            "app_id":2,
+            "message":"คดี อ100/2566 ออกหมายจับ 3/2566",
+            "url":"/"
         }
     ]
 }
