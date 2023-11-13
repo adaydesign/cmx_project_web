@@ -6,7 +6,7 @@ type NotifyItemProps = {
 }
 const NotifyItem = ({ item }: NotifyItemProps) => {
   return (
-    <Card w="200px" _hover={{transform:'scale(1.02)',shadow:'sm',cursor:'pointer'}}>
+    <Card w="full" _hover={{transform:'scale(1.02)',shadow:'sm',cursor:'pointer'}}>
       <CardBody>
         <Flex>
             <Avatar src={item?.app?.app_icon} size="sm" borderRadius={0} mr={2}/>
@@ -22,6 +22,7 @@ const NotifyItem = ({ item }: NotifyItemProps) => {
 
 const NotifyPanel = () => {
   const { notify } = useLoaderData<any>()
+
   return (
     <Card border={0} shadow="none">
       <CardHeader>
@@ -29,7 +30,7 @@ const NotifyPanel = () => {
       </CardHeader>
 
       <CardBody>
-        <SimpleGrid spacing={3} columns={6}>
+        <SimpleGrid spacing={3} columns={5}>
           {notify &&
             notify.map((n: Notify) => <NotifyItem item={n} key={n.id} />)}
         </SimpleGrid>

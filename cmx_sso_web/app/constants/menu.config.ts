@@ -41,12 +41,6 @@ const menuItems: AppMenuType[] = [
             },
             {
                 id:2,
-                label: "ค้นหา",
-                icon: GoSearch,
-                to:"/search"
-            },
-            {
-                id:3,
                 label: "โปรแกรม",
                 icon: GoStack,
                 to:"/portal"

@@ -18,7 +18,7 @@ const useNotify = async () => {
         i.app = authorize.find((a:any)=>a.app_id==i.app_id)
         return i
       })
-      return { notify }
+      return notify
     }
   }
 

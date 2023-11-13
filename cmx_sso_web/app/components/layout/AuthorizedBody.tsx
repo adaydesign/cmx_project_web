@@ -27,11 +27,12 @@ const AuthorizedBody = ({ children }: AuthorizedBodyProps) => {
       minH="full"
       as="main"
       mt={THEME_SIZE_HEADER_HEIGHT}
-      ml={{ lg: isCompact ? `calc( 64px + ${THEME_SIZE_LEFT_SIDEBAR_WIDTH})` : `calc(280px + ${THEME_SIZE_LEFT_SIDEBAR_WIDTH})` }}
-      w={{
-        sm: "full",
-        lg: isCompact ? "full" : `calc(100% - 280px - ${THEME_SIZE_LEFT_SIDEBAR_WIDTH})`,
-      }}
+      pl={{ lg: isCompact ? `calc( 64px + ${THEME_SIZE_LEFT_SIDEBAR_WIDTH})` : `calc(280px + ${THEME_SIZE_LEFT_SIDEBAR_WIDTH})` }}
+      // w={{
+      //   sm: "full",
+      //   lg: isCompact ? "full" : `calc(100% - 280px - ${THEME_SIZE_LEFT_SIDEBAR_WIDTH})`,
+      // }}
+      w="full"
     >
       <Breadcrum />
       {children}
