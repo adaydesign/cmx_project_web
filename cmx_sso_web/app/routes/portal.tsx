@@ -1,5 +1,6 @@
 import { BreadcrumbLink } from "@chakra-ui/react"
 import { Link, useLoaderData } from "@remix-run/react"
+import { useUsersApps } from "~/api-hooks/useUsers"
 import { Page, PageBody } from "~/components/common"
 import { PortalPanel } from "~/components/portal"
 
@@ -12,10 +13,10 @@ export const handle = {
 }
 
 export const loader = async () => {
-    console.log("portal")
-    
-    
-    return {  }
+    // console.log("portal")
+    const data = await useUsersApps()
+    // console.log(data)
+    return data
   }
 
 const PortalPage = () => {
