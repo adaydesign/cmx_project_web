@@ -15,3 +15,11 @@ $ npm run sso:dev
 ```
 $ npm run app:dev
 ```
+
+## Docker
+
+- docker compose
+
+```
+docker compose up --build
+```

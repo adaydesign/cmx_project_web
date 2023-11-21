@@ -1,0 +1,34 @@
+version: "3.3"
+services:
+  cmx_authorize_api:
+    container_name: cmx-authorize-api-container
+    image: cmx-author-api-image
+    build: ./cmx_authorize_api/db
+    ports:
+      - 9200:3000
+    volumes:
+      - ./cmx_authorize_api/db/db.json:/data/db.json
+    command: "json-server --watch /data/db.json --host 0.0.0.0"
+  cmx_sso_web:
+    container_name: cmx-sso-web-container
+    image: cmx-sso-web-image
+    restart: always
+    build: ./cmx_sso_web
+    ports:
+      - 9201:3000
+    depends_on:
+      - cmx_authorize_api
+  # cmx_casestat_web:
+  #   container_name: cmx-casestat-web-container
+  #   image: cmx-casestat-web-image
+  #   restart: always
+  #   build: ./cmx_casestat_web
+  #   ports:
+  #     - 9202:3000
+  # cmx_template_web:
+  #   container_name: cmx-template-web-container
+  #   image: cmx-template-web-image
+  #   restart: always
+  #   build: ./cmx_template_web
+  #   ports:
+  #     - 9203:3000
