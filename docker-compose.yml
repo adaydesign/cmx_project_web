@@ -18,13 +18,16 @@ services:
       - 9201:3000
     depends_on:
       - cmx_authorize_api
-  # cmx_casestat_web:
-  #   container_name: cmx-casestat-web-container
-  #   image: cmx-casestat-web-image
-  #   restart: always
-  #   build: ./cmx_casestat_web
-  #   ports:
-  #     - 9202:3000
+  cmx_casestat_web:
+    container_name: cmx-casestat-web-container
+    image: cmx-casestat-web-image
+    restart: always
+    build: ./cmx_casestat_web
+    ports:
+      - 9202:3000
+    depends_on:
+      - cmx_authorize_api
+      
   # cmx_template_web:
   #   container_name: cmx-template-web-container
   #   image: cmx-template-web-image

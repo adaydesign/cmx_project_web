@@ -1,4 +1,4 @@
-export const API_URL = "http://192.168.1.36:9200"
+export const API_URL = "http://10.1.52.104:9200"
 
 
 export const API_USER_URL = API_URL + "/users?user.username=demouser"
